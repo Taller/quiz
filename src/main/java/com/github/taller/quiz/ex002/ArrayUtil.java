@@ -3,6 +3,8 @@ package com.github.taller.quiz.ex002;
 /**
  * Author: Ivan A. Ivanchikov (taller@github.com)
  * Date: 09.05.14
+ * 
+ * Find the second highest number inside an integer array
  */
 public class ArrayUtil {
 
