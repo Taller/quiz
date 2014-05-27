@@ -26,15 +26,33 @@ public class StringUtilTest {
     }
 
     @Test
+    public void firstCaseRegExp() {
+        String alphaNumeric = "abc123xyz";
+        assertEquals("Answer ", 123, util.parseWithRegExp(alphaNumeric));
+    }
+
+    @Test
     public void firstCase() {
         String alphaNumeric = "abc123xyz";
         assertEquals("Answer ", 123, util.parseByNumbers(alphaNumeric));
     }
 
     @Test
+    public void secondCaseRegExp() {
+        String alphaNumeric = "aa11b33";
+        assertEquals("Answer ", 44, util.parseWithRegExp(alphaNumeric));
+    }
+
+    @Test
     public void secondCase() {
         String alphaNumeric = "aa11b33";
         assertEquals("Answer ", 44, util.parseByNumbers(alphaNumeric));
+    }
+
+    @Test
+    public void thirdCaseRegExp() {
+        String alphaNumeric = "7 11 ";
+        assertEquals("Answer ", 18, util.parseWithRegExp(alphaNumeric));
     }
 
     @Test
