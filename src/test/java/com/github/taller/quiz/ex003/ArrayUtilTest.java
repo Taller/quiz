@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  * Date: 25.05.14
  */
 public class ArrayUtilTest {
-    private final static int MAX_ELEMENTS = 7;
+    private final static int MAX_ELEMENTS = 500;
     private final static int MAX_ELEMENT_LENGTH = 5;
     private final static int TEST_REPEAT = 3000;
     private final static String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
