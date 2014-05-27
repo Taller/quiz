@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Author: Ivan A. Ivanchikov (taller@github.com)
@@ -33,13 +33,13 @@ public class ArrayUtilTest {
     public void firstCase() throws InterruptedException {
         long tokenizer = System.currentTimeMillis();
 
-        for  (int i = 0; i < TEST_REPEAT; i++) {
+        for (int i = 0; i < TEST_REPEAT; i++) {
             util.runTokenizer(sb.toString(), DELIMITER);
         }
         tokenizer = System.currentTimeMillis() - tokenizer;
 
         long split = System.currentTimeMillis();
-        for  (int i = 0; i < TEST_REPEAT; i++) {
+        for (int i = 0; i < TEST_REPEAT; i++) {
             util.runSplit(sb.toString(), DELIMITER);
         }
         split = System.currentTimeMillis() - split;
@@ -53,7 +53,7 @@ public class ArrayUtilTest {
     }
 
     protected void generateTestString(StringBuilder sb) {
-        for (int i = 0; i < MAX_ELEMENTS; i ++ ) {
+        for (int i = 0; i < MAX_ELEMENTS; i++) {
             sb.append(generateElement());
             if (i < MAX_ELEMENTS - 1) {
                 sb.append(DELIMITER);
@@ -66,7 +66,7 @@ public class ArrayUtilTest {
         int lenOfElement = len.nextInt(MAX_ELEMENT_LENGTH);
         int alphabetSize = ALPHABET.length();
         StringBuilder sb = new StringBuilder();
-        for( int i = 0; i < lenOfElement; i++) {
+        for (int i = 0; i < lenOfElement; i++) {
             int index = len.nextInt(alphabetSize);
             char ch = ALPHABET.charAt(index);
             sb.append(ch);

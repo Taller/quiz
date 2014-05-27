@@ -11,14 +11,15 @@ import static org.junit.Assert.assertEquals;
  */
 public class ArrayUtilTest {
 
-/*
-        1. int[ ] numbers = {1, 3, 5, 0, 6, 9};
-        2. int[ ] numbers2 = {0, 3, 7, 1, 12, 9};
+    /*
+            Test plan
+            1. int[ ] numbers = {1, 3, 5, 0, 6, 9};
+            2. int[ ] numbers2 = {0, 3, 7, 1, 12, 9};
 
-        OUTPUT:
-                1. 6
-                2. 9
-*/
+            OUTPUT:
+                    1. 6
+                    2. 9
+    */
     protected ArrayUtil util;
 
     @Before

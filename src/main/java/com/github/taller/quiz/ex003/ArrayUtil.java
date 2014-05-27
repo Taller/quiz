@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 /**
  * Author: Ivan A. Ivanchikov (taller@github.com)
  * Date: 25.05.14
- *
+ * <p/>
  * Performance wise which one is better StringTokenizer or String.split()
  */
 public class ArrayUtil {
@@ -23,7 +23,7 @@ public class ArrayUtil {
     public void runSplit(String str, String delim) throws InterruptedException {
         String stArray[] = str.split(delim);
 
-        for(String s : stArray) {
+        for (String s : stArray) {
 //            Thread.sleep(1);
 //            String ss = s;
             System.out.println(s);
