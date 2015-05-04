@@ -11,13 +11,13 @@ import static org.junit.Assert.assertEquals;
  * Author: Ivan A. Ivanchikov (taller@github.com)
  * Date: 08.05.14
  */
-public class SinglyLinkedListMedianTest {
+public class NodeMedianTest {
 
-    protected SinglyLinkedListMedian median;
+    protected NodeMedian median;
 
     @Before
     public void setUp() {
-        median = new SinglyLinkedListMedian();
+        median = new NodeMedian();
     }
 
     @Test
@@ -28,13 +28,13 @@ public class SinglyLinkedListMedianTest {
 
     @Test
     public void emptyListProvided() {
-        median.setListHolder(new SinglyLinkedList<>(new ListElement(1)));
+        median.setListHolder(new Node<>(new ListElement(1)));
         assertEquals("Expected null ", new ListElement(1), median.getMedianElement());
     }
 
     @Test
     public void oneElementListProvided() {
-        SinglyLinkedList<ListElement> list = new SinglyLinkedList<>(new ListElement(1));
+        Node<ListElement> list = new Node<>(new ListElement(1));
 
         median.setListHolder(list);
         assertEquals("Expected equals id = {1} ", new ListElement(1), median.getMedianElement());
@@ -42,8 +42,8 @@ public class SinglyLinkedListMedianTest {
 
     @Test
     public void twoElementListProvided() {
-        SinglyLinkedList<ListElement> first = new SinglyLinkedList<>(new ListElement(1));
-        SinglyLinkedList<ListElement> second = new SinglyLinkedList<>(new ListElement(2));
+        Node<ListElement> first = new Node<>(new ListElement(1));
+        Node<ListElement> second = new Node<>(new ListElement(2));
 
         first.addLink(second);
         median.setListHolder(first);
@@ -55,7 +55,7 @@ public class SinglyLinkedListMedianTest {
     public void randomElementListProvided() {
         Random r = new Random();
         int size = r.nextInt(90) + 10;
-        SinglyLinkedList<ListElement> list = generateList(size);
+        Node<ListElement> list = generateList(size);
 
         median.setListHolder(list);
 
@@ -65,20 +65,20 @@ public class SinglyLinkedListMedianTest {
     @Test
     public void threeTo1000ElementListProvided() {
         for (int size = 3; size < 100; size++) {
-            SinglyLinkedList<ListElement> list = generateList(size);
+            Node<ListElement> list = generateList(size);
             median.setListHolder(list);
 
             assertEquals("Expected equals id = " + size / 2, new ListElement(size / 2), median.getMedianElement());
         }
     }
 
-    protected SinglyLinkedList<ListElement> generateList(int size) {
+    protected Node<ListElement> generateList(int size) {
 
-        SinglyLinkedList<ListElement> aList = new SinglyLinkedList<>(new ListElement(1));
-        SinglyLinkedList<ListElement> first = aList;
+        Node<ListElement> aList = new Node<>(new ListElement(1));
+        Node<ListElement> first = aList;
 
         for (int i = 2; i <= size; i++) {
-            SinglyLinkedList<ListElement> tList = new SinglyLinkedList<>(new ListElement(i));
+            Node<ListElement> tList = new Node<>(new ListElement(i));
             aList.addLink(tList);
             aList = tList;
         }

@@ -4,16 +4,16 @@ package com.github.taller.quiz.ex001;
  * Author: Ivan A. Ivanchikov (taller@github.com)
  * Date: 08.05.14
  */
-public class SinglyLinkedList<T> {
+public class Node<T> {
     private T el;
-    private SinglyLinkedList linkTo;
+    private Node linkTo;
 
-    public SinglyLinkedList(T el) {
+    public Node(T el) {
         this.el = el;
         this.linkTo = null;
     }
 
-    public void addLink(SinglyLinkedList next) {
+    public void addLink(Node next) {
         this.linkTo = next;
     }
 
@@ -21,7 +21,7 @@ public class SinglyLinkedList<T> {
         return el;
     }
 
-    public SinglyLinkedList next() {
+    public Node next() {
         return this.linkTo;
     }
 
@@ -31,11 +31,11 @@ public class SinglyLinkedList<T> {
             return true;
         }
 
-        if (!(o instanceof SinglyLinkedList)) {
+        if (!(o instanceof Node)) {
             return false;
         }
 
-        SinglyLinkedList that = (SinglyLinkedList) o;
+        Node that = (Node) o;
 
         if (this.linkTo == null || that.linkTo == null) {
             return false;

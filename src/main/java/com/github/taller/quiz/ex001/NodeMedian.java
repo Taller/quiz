@@ -6,17 +6,17 @@ package com.github.taller.quiz.ex001;
  * <p/>
  * How to get the center element in a Singly Linked list
  */
-public class SinglyLinkedListMedian {
-    private SinglyLinkedList listHolder;
+public class NodeMedian {
+    private Node listHolder;
 
-    public SinglyLinkedListMedian() {
+    public NodeMedian() {
     }
 
-    public SinglyLinkedListMedian(SinglyLinkedList list) {
+    public NodeMedian(Node list) {
         this.listHolder = list;
     }
 
-    public void setListHolder(SinglyLinkedList listHolder) {
+    public void setListHolder(Node listHolder) {
         this.listHolder = listHolder;
     }
 
@@ -36,8 +36,8 @@ public class SinglyLinkedListMedian {
             return listHolder.getElement();
         }
 
-        SinglyLinkedList median = listHolder;
-        SinglyLinkedList iterator = listHolder.next();
+        Node median = listHolder;
+        Node iterator = listHolder.next();
         boolean odd = true;
 
         while (iterator.next() != null) {
