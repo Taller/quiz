@@ -9,3 +9,4 @@ Interview Question
 * ex004 Get the SUM of numbers inside the String (ignore other characters)
 * ex005 Return "true" if you can balance the values inside the array
 * ex006 Print the elements of an array in the decreasing frequency
+* ex007 Find subrange in int array which has the highest sum
